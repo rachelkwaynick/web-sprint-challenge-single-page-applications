@@ -7,7 +7,8 @@ import PizzaForm from './PizzaForm';
 
 export default function Home(props) {
 
-    
+    const { values, change, submit, disabled, errors } = props;
+
     return (
         <div>
             <div className='background-img'>
@@ -18,7 +19,13 @@ export default function Home(props) {
 
 
             <Route path={'/pizza'}>
-                <PizzaForm />
+                <PizzaForm
+                    values={values}
+                    change={change}
+                    submit={submit}
+                    disabled={disabled}
+                    errors={errors}
+                />
             </Route>
         </div>
 
