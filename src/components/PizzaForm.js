@@ -157,7 +157,7 @@ export default function PizzaForm(props) {
             </div>
 
 
-            <button disabled={disabled}>Add to Order</button>
+            <button id='submitBtn' disabled={disabled}>Add to Order</button>
         </form>
     )
 }

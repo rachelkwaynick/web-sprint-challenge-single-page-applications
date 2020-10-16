@@ -54,9 +54,10 @@ const App = () => {
 
   const getPizzas = () => {
     axios
-      .get(`https://reqres.in/`)
+      .get(`https://reqres.in/api/pizza`)
       .then((res) => {
-        setPizzas(res.data);
+        setPizzas(res.data.data);
+        console.log('get', res.data.data)
       })
       .catch((err) => {
         alert('Error!')
@@ -65,11 +66,11 @@ const App = () => {
 
   const postPizza = (newPizza) => {
     axios 
-      .post(`https://reqres.in/`, newPizza)
+      .post(`https://reqres.in/api/pizza`, newPizza)
       .then((res) => {
         setPizzas([res.data, ...pizzas]);
         setFormValues(initalFormValues);
-        
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err)
